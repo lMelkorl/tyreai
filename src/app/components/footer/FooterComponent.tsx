@@ -5,7 +5,10 @@ export default function FooterComponent() {
   const tyre = require("../../../../public/images/tyre-bgno.png").default.src;
   const tyreReverse = require("../../../../public/images/tyre-bgno_reverse.png").default.src;
 
-  const isMobile = window.innerWidth <= 640;
+  let isMobile
+  if (typeof window !== 'undefined') {
+    isMobile = window.innerWidth <= 640;
+  }
 
   const rightFooterStyle: React.CSSProperties = {
     position: "absolute",
