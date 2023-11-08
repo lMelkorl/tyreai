@@ -1,6 +1,5 @@
 "use client"
 
-import ImageClassification from './components/imageClassification/imageClassification'
 import Animation from './components/animation/animation'
 import { TypeAnimation } from 'react-type-animation'
 import { Button, Card, CardBody, CardFooter, CardHeader, Chip, CircularProgress, Image, Link } from '@nextui-org/react'
