@@ -1,10 +1,19 @@
 "use client"
 import ImageClassification from '@/app/components/imageClassification/imageClassification'
 import { Image } from '@nextui-org/react'
+import { useRouter } from 'next/router'
 import React from 'react'
 
 export default function Page() {
     const using = require("./using.png").default.src
+
+    const {
+      isFallback,
+  } = useRouter();
+  
+  if (isFallback) {
+      return <h1>Fallback</h1>;
+  }
 
   return (
     <div className='container mx-auto mt-20'>
