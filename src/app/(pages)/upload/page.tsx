@@ -4,8 +4,8 @@ import { Image } from '@nextui-org/react'
 import React from 'react'
 
 export default function Page() {
-    const using = require("../../../../public/images/using.png").default.src
-    
+    const using = require("./using.png").default.src
+
   return (
     <div className='container mx-auto mt-20'>
          <div className="mb-10 ">
