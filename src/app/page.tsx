@@ -7,7 +7,6 @@ import LibTableComponent from './components/LibTable/LibTableComponent'
 import LensBlurIcon from '@mui/icons-material/LensBlur';
 
 export default function Home() {
-
   const tyre = require("../../public/images/tyre-bgno2.png").default.src
   const tyrev1 = require("../../public/images/tyrev1.jpg").default.src
   const tyrev2 = require("../../public/images/tyrev2.jpg").default.src
