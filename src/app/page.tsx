@@ -1,113 +1,224 @@
-import Image from 'next/image'
+"use client"
+
+import ImageClassification from './components/imageClassification/imageClassification'
+import Animation from './components/animation/animation'
+import { TypeAnimation } from 'react-type-animation'
+import { Button, Card, CardBody, CardFooter, CardHeader, Chip, CircularProgress, Image, Link } from '@nextui-org/react'
+import LibTableComponent from './components/LibTable/LibTableComponent'
+import LensBlurIcon from '@mui/icons-material/LensBlur';
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+  const tyre = require("../../public/images/tyre-bgno2.png").default.src
+  const tyrev1 = require("../../public/images/tyrev1.jpg").default.src
+  const tyrev2 = require("../../public/images/tyrev2.jpg").default.src
+
+  const aiTextStyle = {
+    padding: '2px',
+    marginRight: '2px',
+    fontWeight: '700',
+    color: 'transparent',
+    background: 'linear-gradient(to right, rgb(232 121 249), rgb(219 39 119))',
+    fontSize: '2rem',
+    height: "5rem",
+    WebkitBackgroundClip: 'text',
+  };
+
+  // Then, in your JSX, you can apply the style to your element:
+  <mark style={aiTextStyle}>Ai</mark>
+
+
+  const coder = require("../../public/images/coder.svg").default.src
+
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-8 sm:p-6 mb-20">
+      <div className="w-full flex sm:justify-center h-full p-0 mb-20">
+        <TypeAnimation
+          className='text-xl mb-10 sm:text-4xl font-semibold'
+          sequence={[
+            'Tyre',
+            500,
+            'Tyre Ai ile',
+            500,
+            'Tyre Ai ile lastik kalitenizi',
+            1000,
+            'Tyre Ai ile lastik kalitenizi öğrenin.',
+            1000,
+          ]}
+          wrapper="span"
+          style={aiTextStyle}
+          speed={50}
+          repeat={Infinity}
         />
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="m10 mt-5 sm:mt-10 mb-10 mt-20">
+        <Animation />
       </div>
+
+      <div className="mb-10">
+        <div className=" mt-10">
+          <div className="container mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 flex items-center">
+            <div className="w-full col-span-2 sm:col-span-1 py-5 mt-20">
+              <h1 className="mb-3 mt-2 text-4xl md:text-4xl lg:text-4xl font-extrabold leading-none tracking-tight dark:text-white">
+                Tyre
+                <mark className="px-2 mr-2 font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                  Ai
+                </mark>
+                Teknolojisi
+              </h1>
+              <p className="text-base text-md dark:text-gray-400 mt-7">
+                Son teknoloji yapay zeka modeli, lastik kusurlarını %86 başarı oranıyla tespit ederek endüstriyel kalite kontrolünü baştan sona yeniden tanımlıyor. Bu inovasyon, lastik üretim süreçlerini hızlandırmak, atık maliyetlerini düşürmek ve kaliteyi artırmak için büyük bir fırsat sunuyor. Yapay zeka modeli sürekli öğrenmeye tabi tutularak geliştiriliyor ve endüstriyel sektörde büyük bir değişimi işaret ediyor. İnsan gözetimiyle birleştirilerek kullanıldığında, bu teknoloji, gelecekte endüstriyel kalite kontrolünün vazgeçilmez bir parçası olabilir.
+              </p>
+            </div>
+
+            <div className="w-full col-span-2 sm:col-span-1 flex md:justify-end sm:mt-20">
+              <Image
+                width={300}
+                height={120}
+                className="mt-20 rounded "
+                src={tyre}
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-10">
+        <div className="container mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 gap-20 flex items-center w-full">
+
+          <div className="col-span-2 sm:col-span-1">
+            <Card isFooterBlurred className="w-full h-[300px] col-span-12 sm:col-span-7">
+              <CardHeader className="absolute z-10 top-1 flex-col items-start">
+                <p className="text-tiny text-white/60 uppercase font-bold">Genel kontroller</p>
+                <h4 className="text-white/90 font-medium text-xl">Analizle kontrol sağlayın.</h4>
+              </CardHeader>
+              <Image
+                alt="Relaxing app background"
+                className="z-0 w-full h-full object-cover"
+                src={tyrev2}
+
+              />
+              <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+                <div className="flex flex-grow gap-2 items-center">
+                  <Image
+                    alt="Breathing app icon"
+                    className="rounded-full w-10 h-11 bg-black"
+                    src={tyrev1}
+                  />
+                  <div className="flex flex-col">
+                    <p className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">final model v1,13</p>
+                    <p className="text-tiny text-white/60">Olarak Eğitildi</p>
+                  </div>
+                </div>
+                <Button className='bg-gradient-to-r from-purple-400 to-pink-600 text-black' radius="full" size="sm">Geliştiriliyor</Button>
+              </CardFooter>
+            </Card>
+          </div>
+          <div className="col-span-2 sm:col-span-1 text-base text-md dark:text-gray-400">
+            Bu son teknoloji yapay zeka modelleri, endüstriyel kalite kontrolünü kökten değiştiriyor. Özellikle lastik üretiminde kullanılan bu modeller, %86 başarı oranıyla lastik kusurlarını tespit edebiliyor. Bu, endüstriyel kalite kontrolünün verimliliğini artırmak, atık maliyetlerini düşürmek ve kaliteyi yükseltmek anlamına geliyor. Bu alandaki gelişmeler, sürekli olarak bu yapay zeka modellerini daha da güçlendirmek için devam ediyor ve gelecekte endüstriyel kalite kontrolünü daha da iyileştirmek amacıyla yeni inovasyonlar bekleniyor. Bu teknolojinin geliştirme süreci, endüstriyel sektörde büyük bir dönüşümü işaret ediyor. </div>
+        </div>
+
+      </div>
+
+      <div className="mb10">
+        <div className="container mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 gap-20 flex items-center w-full">
+          <div className="col-span-2 sm:col-span-1 ">
+            <h2 className='text-4xl font-extrabold mb-10 mt-6'>
+              Hemen Deneyin
+            </h2>
+            <div className="col-span-2 sm:col-span-1 text-base text-md dark:text-gray-400">
+              lastik yüzeyinin fotoğrafına göre kusurlu ve kusursuz alanları belirleyebiliyor. Bu inovasyon, endüstride verimliliği artırırken atık maliyetlerini düşürüyor ve ürün kalitesini yükseltiyor. Üretim süreçlerinde hızlı ve hassas bir denetim sağlayan bu yapay zeka modeli, endüstriyel sektörde büyük bir dönüşümü temsil ediyor ve gelecekte kalite kontrolünü daha da geliştirmeye yönelik umut verici bir adım olarak ön plana çıkıyor.
+            </div>
+          </div>
+
+
+          <div className="col-span-2 sm:col-span-1 flex justify-center">
+            <Button as={Link} href='/upload' size="lg" color="success" className='text-white font-extrabold bg-gradient-to-r from-purple-400 to-pink-600' endContent={<LensBlurIcon className='mx-1 text-white' />}>
+              Deneyimle
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-10 mt-10 container mx-auto w-full">
+
+        <h2 className='text-5xl font-extrabold text-center mb-10 mt-5 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Modüller</h2>
+
+        <LibTableComponent />
+      </div>
+
+      <div className="mb-20">
+
+        <h2 className='text-5xl font-extrabold text-center mb-10 mt-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Oran</h2>
+
+        <div className="container mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 gap-20 flex items-center w-full">
+          <div className="col-span-2 sm:col-span-1 flex justify-center">
+            <Card className="w-[240px] h-[240px] border-none ">
+              <CardBody className="justify-center items-center pb-0">
+                <CircularProgress
+                  classNames={{
+                    svg: "w-36 h-36 drop-shadow-md text-success",
+                    indicator: "stroke-success",
+                    track: "stroke-white/10",
+                    value: "text-3xl font-extrabold text-success",
+                  }}
+                  value={84}
+                  strokeWidth={4}
+                  showValueLabel={true}
+                />
+              </CardBody>
+              <CardFooter className="justify-center items-center pt-0">
+                <Chip
+                  classNames={{
+                    base: "p-3 bg-gradient-to-r from-purple-400 to-pink-600 text-black",
+                    content: "text-black text-small font-semibold p-3 py-5 ",
+                  }}
+                  variant="bordered"
+                >
+                  Doğruluk oranı
+                </Chip>
+              </CardFooter>
+            </Card>
+          </div>
+
+
+          <div className="col-span-2 sm:col-span-1 flex justify-center">
+            <Card className="w-[240px] h-[240px] border-none ">
+              <CardBody className="justify-center items-center pb-0">
+                <CircularProgress
+                  classNames={{
+                    svg: "w-36 h-36 drop-shadow-md text-danger",
+                    indicator: "stroke-danger",
+                    track: "stroke-white/10",
+                    value: "text-3xl font-extrabold text-danger",
+                  }}
+                  value={16}
+                  strokeWidth={4}
+                  showValueLabel={true}
+                />
+              </CardBody>
+              <CardFooter className="justify-center items-center pt-0">
+                <Chip
+                  classNames={{
+                    base: "p-3 bg-gradient-to-r from-purple-400 to-pink-600 text-black",
+                    content: "text-black text-small font-semibold p-3 py-5 ",
+                  }}
+                  variant="bordered"
+                >
+                  Hata oranı
+                </Chip>
+              </CardFooter>
+            </Card>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
     </main>
   )
 }
