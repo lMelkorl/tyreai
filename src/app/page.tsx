@@ -22,7 +22,6 @@ export default function Home() {
     WebkitBackgroundClip: 'text',
   };
 
-  // Then, in your JSX, you can apply the style to your element:
   <mark style={aiTextStyle}>Ai</mark>
 
 
