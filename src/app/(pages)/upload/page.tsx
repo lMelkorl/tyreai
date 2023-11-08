@@ -3,7 +3,7 @@ import ImageClassification from '@/app/components/imageClassification/imageClass
 import { Image } from '@nextui-org/react'
 import React from 'react'
 
-export default function page() {
+export default function Page() {
     const using = require("../../../../public/images/using.png").default.src
   return (
     <div className='container mx-auto mt-20'>
