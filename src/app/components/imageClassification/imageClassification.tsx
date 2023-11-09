@@ -8,7 +8,7 @@ import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import LensBlurIcon from '@mui/icons-material/LensBlur';
 
-export default function ImageClassification() {
+const ImageClassification = () =>{
   const [image, setImage] = useState<any>(null);
   const [result, setResult] = useState('');
 
@@ -94,3 +94,5 @@ export default function ImageClassification() {
     </div>
   );
 }
+
+export default ImageClassification;
