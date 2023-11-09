@@ -1,20 +1,11 @@
 "use client"
 import ImageClassification from '@/app/components/imageClassification/imageClassification'
 import { Image } from '@nextui-org/react'
-import { useRouter } from 'next/router'
 import React from 'react'
+import usingImage from "./using.png";
 
-export default function Page() {
-    const using = require("./using.png").default.src
-
-    const {
-      isFallback,
-  } = useRouter();
-  
-  if (isFallback) {
-      return <h1>Fallback</h1>;
-  }
-
+const Upload = () => {
+  const using = usingImage.src;
   return (
     <div className='container mx-auto mt-20'>
          <div className="mb-10 ">
@@ -27,7 +18,7 @@ export default function Page() {
               Örnekteki gibi lastiğinizin yüzey kısmının resmini çekerek yükleyebilirsiniz,unutmayın kullanılan mevcut model geliştirme aşamasında olup %86 doğruluk payı içeren bir yapay zeka modelidir.
                  </div>
           </div>
-
+    
 
           <div className="col-span-2 sm:col-span-1 flex justify-end px-10">
           <Image
@@ -48,3 +39,5 @@ export default function Page() {
     </div>
   )
 }
+
+export default Upload

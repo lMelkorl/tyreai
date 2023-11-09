@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+"use client"
+
 import React, { useState } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import { Button, Card, CardBody, CardHeader, Spinner } from '@nextui-org/react';
