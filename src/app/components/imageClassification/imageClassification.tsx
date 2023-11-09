@@ -49,10 +49,6 @@ const ImageClassification = () =>{
       <div className="flex items-center justify-center w-full my-5 mb-20">
         {image ? (
           <div className="relative">
-            {/* <img src={URL.createObjectURL(image)} alt="Uploaded" className="w-[20rem] h-[15rem] object-contain" />
-            <Button color='danger' size='sm' variant="faded" isIconOnly className="absolute top-1 right-1" onClick={removeImage}>
-                <RemoveCircleIcon/>
-            </Button> */}
                 <Card className={`py-4 border border-2 ${result === "Kusurlu" ? "border-danger" : result === "Kusursuz" ? "border-success" : "border-none"}`}>
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
         <p className="text-tiny uppercase font-bold">{image.name}</p>
@@ -89,7 +85,7 @@ const ImageClassification = () =>{
       </div>
       <input className='hidden' id='imageUpload' type="file" accept="image/*" onChange={handleImageUpload} />
       <div className='flex justify-center'>
-      <Button variant='faded' className='text-white font-semibold bg-gradient-to-r from-purple-400 to-pink-600' endContent={  <LensBlurIcon fontSize="large" className="text-white"/>} color="success" onClick={loadModel}>Tahmin et</Button>
+      <Button variant='faded' className='text-white font-semibold bg-gradient-to-r from-purple-400 to-pink-600' endContent={<LensBlurIcon fontSize="large" className="text-white"/>} color="success" onClick={loadModel}>Tahmin et</Button>
       </div>
     </div>
   );
